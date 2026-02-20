@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration //Configuracoes de BEAN
 public class MontadoraConfiguration {
 
+    //Precisa sempre do Bean e Configuration para um classe de configuracao
 
     @Bean //Bean e um metodo que retorna um metodo construido
     public Motor motor() {
