@@ -2,7 +2,7 @@ package io.github.danielvieirabh.arquiteturasspring.montadora;
 
 public class Motor {
     private String modelo;
-    private Integer cavalo;
+    private Integer cavalos;
     private Integer cilindros;
     private Double litragem;
     private TipoMotor tipo;
@@ -11,20 +11,20 @@ public class Motor {
 
     }
 
-    public Motor(String modelo, Integer cavalo, Integer cilindros, Double litragem, TipoMotor tipo) {
+    public Motor(String modelo, Integer cavalos, Integer cilindros, Double litragem, TipoMotor tipo) {
         this.modelo = modelo;
-        this.cavalo = cavalo;
+        this.cavalos = cavalos;
         this.cilindros = cilindros;
         this.litragem = litragem;
         this.tipo = tipo;
     }
 
-    public Integer getCavalo() {
-        return cavalo;
+    public Integer getCavalos() {
+        return cavalos;
     }
 
-    public void setCavalo(Integer cavalo) {
-        this.cavalo = cavalo;
+    public void setCavalos(Integer cavalo) {
+        this.cavalos = cavalo;
     }
 
     public Integer getCilindros() {
@@ -57,5 +57,16 @@ public class Motor {
 
     public void setTipo(TipoMotor tipo) {
         this.tipo = tipo;
+    }
+
+    @Override
+    public String toString() {
+        return "Motor{" +
+                "modelo='" + modelo + '\'' +
+                ", cavalos=" + cavalos +
+                ", cilindros=" + cilindros +
+                ", litragem=" + litragem +
+                ", tipo=" + tipo +
+                '}';
     }
 }
