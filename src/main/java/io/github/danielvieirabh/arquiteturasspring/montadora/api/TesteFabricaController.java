@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/carros") //Passar no json a montadora e tipo que vem de chave
 public class TesteFabricaController {
     @Autowired //Pegar a instancia do motor onde ela ja esta instanciada no projeto
-    @Qualifier("motorTurbo") //Colocar isso quando tiver mais de um Bean
+  //  @Qualifier("motorTurbo") //Colocar isso quando tiver mais de um Bean
+    @Turbo //Anotation personalizado
     private Motor motor;
 
     @PostMapping
