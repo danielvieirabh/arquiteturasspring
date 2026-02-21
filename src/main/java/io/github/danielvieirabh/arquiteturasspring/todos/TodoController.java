@@ -1,18 +1,25 @@
 package io.github.danielvieirabh.arquiteturasspring.todos;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 //Aqui fica a API
 @RestController
 @RequestMapping("/todos")
-public class TodoController {
+public class TodoController {  //Api Rest
     @Autowired
     private TodoService todoService;
 
     @PostMapping
     public TodoEntity salvar(@RequestBody TodoEntity todoEntity) {
-       return todoService.salvar(todoEntity);
+        try {
+            return todoService.salvar(todoEntity);
+        }
+        catch (IllegalArgumentException error) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, error.getMessage()); //COdigo 409 se der erro , vai dar erro se tiver a mesma descricao
+        }
     }
 
     @PutMapping(value = "/{id}")
