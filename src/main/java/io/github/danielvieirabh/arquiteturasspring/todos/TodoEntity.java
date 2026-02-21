@@ -14,12 +14,14 @@ public class TodoEntity {
     @Column(name = "fl_concluido")
     private Boolean concluido;
 
+    public TodoEntity() {
+    }
+
     public TodoEntity(Integer id, String descricao, Boolean concluido) {
         this.id = id;
         this.descricao = descricao;
         this.concluido = concluido;
     }
-
 
     public Boolean getConcluido() {
         return concluido;

@@ -9,8 +9,17 @@ public class TodoService {
     @Autowired
     private TodoRepository todoRepository;
 
-    public  TodoEntity salvar(TodoEntity novoTodo) {
-        return todoRepository.save(novoTodo);
+    public  TodoEntity salvar(TodoEntity todoEntity) {
+        return todoRepository.save(todoEntity);
     }
+
+    public void atualizarStatus(TodoEntity todoEntity) {
+        todoRepository.save(todoEntity);
+    }
+    
+    public TodoEntity findById(Integer id) {
+        return todoRepository.findById(id).orElse(null);
+    }
+    
 
 }
