@@ -4,9 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class TodoValidator {
-    @Autowired
+public class TodoValidator { //Melhor usar construtor padrao
+
     private TodoRepository todoRepository;
+
+    public TodoValidator(TodoRepository todoRepository) {
+        this.todoRepository = todoRepository;
+    }
 
     public void validar(TodoEntity todoEntity) {
         if (existeTodoComDescricao(todoEntity.getDescricao())) {

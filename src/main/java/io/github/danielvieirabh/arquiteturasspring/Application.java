@@ -15,6 +15,7 @@ public class Application {
 		SpringApplicationBuilder builder = new SpringApplicationBuilder(Application.class);
 		builder.bannerMode(Banner.Mode.OFF); //Tirar a logo que vme no terminal
 		builder.profiles("producao"); //perfil de producao para debugar em producao
+		//builder.lazyInitialization(true);
 		builder.run(args);
 
 		ConfigurableApplicationContext applicationContext = builder.context();
