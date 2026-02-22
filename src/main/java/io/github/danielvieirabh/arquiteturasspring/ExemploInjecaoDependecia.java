@@ -2,11 +2,8 @@ package io.github.danielvieirabh.arquiteturasspring;
 
 import io.github.danielvieirabh.arquiteturasspring.todos.*;
 import jakarta.persistence.EntityManager;
-import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
-import javax.sql.DataSource;
-import javax.swing.text.html.parser.Entity;
 import java.sql.Connection;
 
 public class ExemploInjecaoDependecia {

@@ -4,10 +4,12 @@ import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.env.ConfigurableEnvironment;
 
 @SpringBootApplication
+@EnableConfigurationProperties
 public class Application {
 
 	public static void main(String[] args) {
@@ -24,6 +26,11 @@ public class Application {
 		ConfigurableEnvironment environment = applicationContext.getEnvironment();
 		String applicationNmae = environment.getProperty("spring.application.name");
 		System.out.println("Nome da aplicacao: " + applicationNmae);
+
+		ExemploValue exemploValue = applicationContext.getBean(ExemploValue.class);
+		exemploValue.imprimirVariavel();
+		AppProperties appProperties = applicationContext.getBean(AppProperties.class);
+		System.out.println("Valor application.yml: " + appProperties.getValor1()); //Valor la do yaml
 	}
 
 }

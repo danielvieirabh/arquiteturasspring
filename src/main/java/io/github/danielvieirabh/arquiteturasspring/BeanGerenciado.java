@@ -1,5 +1,7 @@
-package io.github.danielvieirabh.arquiteturasspring.todos;
+package io.github.danielvieirabh.arquiteturasspring;
 
+import io.github.danielvieirabh.arquiteturasspring.todos.TodoEntity;
+import io.github.danielvieirabh.arquiteturasspring.todos.TodoValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Scope;
